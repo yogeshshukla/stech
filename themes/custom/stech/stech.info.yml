@@ -7,3 +7,6 @@ regions:
   primary_menu: 'Primary Menu'
   content: 'Content'
   footer: 'Footer'
+libraries:
+  - stech/global-styling
+  - stech/global-scripts
