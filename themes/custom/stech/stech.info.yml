@@ -5,6 +5,7 @@ core: 8.x
 regions:
   header: 'Header'
   primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
   content: 'Content'
   footer: 'Footer'
 libraries:

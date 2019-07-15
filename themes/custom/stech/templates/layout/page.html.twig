@@ -33,7 +33,6 @@
  * - page.secondary_menu: Items for the secondary menu region.
  * - page.content: The main content of the current page.
  * - page.footer: Items for the footer region.
- * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
  * @see html.html.twig
@@ -66,12 +65,16 @@
                     <button class="search-btn">
                         <i class="fa fa-search"></i>
                     </button>
+                    <form action="{{ base_path }}search/node" method="get">
                     <div class="search-form">
-                        <input class="search-input" name="search" placeholder="Enter Your Search ..." type="text">
-                        <button class="search-close">
-                            <i class="fa fa-times"></i>
-                        </button>
+                        
+                            <input class="search-input" name="keys" placeholder="Enter Your Search ..." type="text">
+                            <button class="search-close">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        
                     </div>
+                    </form>
                 </div>
                 <!-- /search & aside toggle -->
             </div>
@@ -146,36 +149,75 @@
       <!-- /container -->
   </div>
 {% endif %}
-		<!-- /section -->
-    <div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-8">
-						<div class="row">
-						{{ page.content }}	
-						</div>
-					</div>
-        {% if page.right_sidebar %}
-          <div class="col-md-4">
-            {{ page.right_sidebar }}
-          </div>
-        {% endif %}
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		  </div>
-
-   
-  {% if page.footer %}
+<!-- /section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                {{ page.content }}	
+                </div>
+            </div>
+            {% if page.right_sidebar %}
+            <div class="col-md-4">
+                {{ page.right_sidebar }}
+            </div>
+            {% endif %}
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div> 
+{% if page.footer %}
     <footer id="footer">
-			<!-- container -->
-			<div class="container">
-        {{ page.footer }}
-      </div>
-			<!-- /container -->
-	  </footer>
-  {% endif %}
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-5">
+						<div class="footer-widget">
+							<div class="footer-logo">
+								<a href="index.html" class="logo"><img src="{{ base_path ~ directory }}/images/logo.png" alt=""></a>
+							</div>
+							<ul class="footer-nav">
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Advertisement</a></li>
+							</ul>
+							<div class="footer-copyright">
+								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+							</div>
+						</div>
+				</div>
+                <div class="col-md-4">
+                    <div class="row">
+                        {{ page.footer }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-widget">
+                        <h3 class="footer-title">Join our Newsletter</h3>
+                        <div class="footer-newsletter">
+                            <form>
+                                <input class="input" type="email" name="newsletter" placeholder="Enter your email">
+                                <button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                        <ul class="footer-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+			    </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+	</footer>
+{% endif %}
 
