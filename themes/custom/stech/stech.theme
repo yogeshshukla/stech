@@ -1,0 +1,9 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+
+function stech_node_links_alter( array &$links, NodeInterface $node, array &$context ) {
+    die('212');
+	unset( $links['comment__comment'] );
+}
