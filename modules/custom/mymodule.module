@@ -1,0 +1,9 @@
+<?php
+
+use Drupal\node\NodeInterface;
+
+function mymodule_node_links_alter(array &$links, NodeInterface $node, array &$context) {
+  if($context['view_mode'] == 'teaser' || $context['view_mode'] == 'featured_post') {
+    unset($links['comment__comment']);
+  }  
+}

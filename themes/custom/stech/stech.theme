@@ -1,9 +1,27 @@
 <?php
+//require_once DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php';
+//Kint::dump($vars['content']['links']);
 
-use Drupal\node\NodeInterface;
+use Drupal\image\Entity\ImageStyle; 
 
-
-function stech_node_links_alter( array &$links, NodeInterface $node, array &$context ) {
-    die('212');
-	unset( $links['comment__comment'] );
+function stech_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['elements']['#view_mode'];
+  
+  if ($node->getType() == 'article') {
+    if(isset($node->get('field_image')->entity)){
+      if ($view_mode == 'teaser') {
+        $image_style = 'front_300_180_'; // Or whatever your image style's machine name is.
+      }
+      elseif ($view_mode == 'featured_post') {
+        $image_style = 'featured_360_216_'; 
+      }
+      else {
+        $image_style = 'large'; 
+      }
+      $style = ImageStyle::load($image_style);
+      $variables['image_url'] = $style->buildUrl($node->get('field_image')->entity->getFileUri()); // Generates file url.
+    }
+  }
+    
 }

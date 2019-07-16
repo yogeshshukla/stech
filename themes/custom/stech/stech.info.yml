@@ -6,6 +6,8 @@ regions:
   header: 'Header'
   primary_menu: 'Primary Menu'
   secondary_menu: 'Secondary Menu'
+  featured_posts: 'Featured Posts'
+  right_sidebar: 'Right Sidebar'
   content: 'Content'
   footer: 'Footer'
 libraries:

@@ -69,10 +69,8 @@
                     <div class="search-form">
                         
                             <input class="search-input" name="keys" placeholder="Enter Your Search ..." type="text">
-                            <button class="search-close">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        
+                                <i class="fa fa-times search-close"></i>
+                            
                     </div>
                     </form>
                 </div>
@@ -162,6 +160,11 @@
             </div>
             {% if page.right_sidebar %}
             <div class="col-md-4">
+                <div class="aside-widget text-center">
+                    <a href="#" style="display: inline-block;margin: auto;">
+                        <img class="img-responsive" src="{{ base_path ~ directory }}/images/ad-1.jpg" alt="">
+                    </a>
+                </div>
                 {{ page.right_sidebar }}
             </div>
             {% endif %}
