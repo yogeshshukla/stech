@@ -121,6 +121,26 @@
         <!-- Aside Nav -->
     </div>
     <!-- /Nav -->
+    <!-- Page Header -->
+    <div id="post-header" class="page-header">
+        <div class="background-img" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}');"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="post-meta">
+                        {% if node.field_category[0].value %}
+                            {% for key, item in node.field_category if key|first != '#' %}
+                                <a class="post-category cat-{{ loop.index }}" href="{{ item['#url'] }}">{{ dump(node.field_category.value) }}</a>
+                            {% endfor %}
+                        {% endif %}
+                        <span class="post-date">{{ node.created_at|date("M d, Y") }}</span>
+                    </div>
+                    <h1>{{ node.title.value }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Header -->
 </header>
 
 <!-- /Header -->

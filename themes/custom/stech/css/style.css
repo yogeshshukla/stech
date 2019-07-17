@@ -789,39 +789,40 @@ RESPONSIVE
      -webkit-transition:0.2s color;
      transition:0.2s color;
 }
- .category-widget ul li > a > span {
+ .category-widget ul li  > span {
      float:right;
      color:#fff;
      background-color: #212631;
      padding:0px 5px;
      font-weight:600;
      border-radius:2px;
+     margin-top: -17px;
 }
- .category-widget ul li > a.cat-1 > span {
+ .category-widget ul li.cat-1 > span {
      background-color: #4BB92F;
 }
- .category-widget ul li > a.cat-2 > span {
+ .category-widget ul li.cat-2 > span {
      background-color: #ff8700;
 }
- .category-widget ul li > a.cat-3 > span {
+ .category-widget ul li.cat-3 > span {
      background-color: #8d00ff;
 }
- .category-widget ul li > a.cat-4 > span {
+ .category-widget ul li.cat-4 > span {
      background-color: #0078ff;
 }
- .category-widget ul li > a:hover, .category-widget ul li > a:focus {
+ .category-widget ul li > :hover, .category-widget ul li > :focus {
      text-decoration:none;
 }
- .category-widget ul li > a.cat-1:hover, .category-widget ul li > a.cat-1:focus {
-     color: #4BB92F;
+ .category-widget ul li.cat-1 > a:hover, .category-widget ul li.cat-1 > a:focus {
+     color: #4BB92F;    
 }
- .category-widget ul li > a.cat-2:hover, .category-widget ul li > a.cat-2:focus {
+ .category-widget ul li.cat-2 > a:hover, .category-widget ul li.cat-2 > a:focus {
      color: #ff8700;
 }
- .category-widget ul li > a.cat-3:hover, .category-widget ul li > a.cat-3:focus {
+ .category-widget ul li.cat-3 > a:hover, .category-widget ul li.cat-3 > a:focus {
      color: #0078ff;
 }
- .category-widget ul li > a.cat-4:hover, .category-widget ul li > a.cat-4:focus {
+ .category-widget ul li.cat-4 > a:hover, .category-widget ul li.cat-4 > a:focus {
      color: #8d00ff;
 }
 /*----------------------------*\
