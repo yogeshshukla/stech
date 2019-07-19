@@ -4,10 +4,12 @@
 use Drupal\image\Entity\ImageStyle;
 
 function stech_preprocess_node( &$variables ) {
+	$variables['theme_path'] = base_path() . $variables['directory'];
 	$node      = $variables['node'];
 	$view_mode = $variables['elements']['#view_mode'];
 
 	if ( $node->getType() == 'article' ) {
+		$variables['comment_count'] = $variables['node']->get('comment')->comment_count;
 		if ( isset( $node->get( 'field_image' )->entity ) ) {
 			if ( $view_mode == 'teaser' ) {
 				$image_style = 'front_300_180_'; // Or whatever your image style's machine name is.
@@ -21,4 +23,11 @@ function stech_preprocess_node( &$variables ) {
 		}
 	}
 
+}
+
+function stech_preprocess_page( &$variables ) {
+	$variables['theme_path'] = base_path() . $variables['directory'];
+	if ($variables['is_front'] == false){
+		$variables['term_title'] = $variables['page']['#title'];
+	}
 }

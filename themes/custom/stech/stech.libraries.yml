@@ -8,6 +8,9 @@ global-styling:
       css/style.css: {}
 global-scripts:
   js:
-    js/jquery.min.js: {}
     js/bootstrap.min.js: {}
     js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

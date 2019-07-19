@@ -70,29 +70,70 @@
  *   in different view modes.
  */
 #}
-{{  content.field_category.0  }}
-<article{{ attributes }}>
+<div class="section">
+  <!-- container -->
+  <div class="container">
+	  <!-- row -->
+		<div class="row">
+      <div class="col-md-8">
+        <div class="section-row sticky-container">
+					  {{ title_prefix }}
+            {% if not page %}
+              <h2{{ title_attributes }}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+              </h2>
+            {% endif %}
+            {{ title_suffix }}
+            <div{{ content_attributes.addClass('main-post') }}>
+              {{ content.body }}
+            </div>
+            <div class="post-shares sticky-shares">
+								<a href="#" class="share-facebook"><i class="fa fa-facebook"></i></a>
+								<a href="#" class="share-twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#" class="share-google-plus"><i class="fa fa-google-plus"></i></a>
+								<a href="#" class="share-pinterest"><i class="fa fa-pinterest"></i></a>
+								<a href="#" class="share-linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-envelope"></i></a>
+						</div>
+            {% if display_submitted %}
+            <!-- author -->
+						<div class="section-row">
+							<div class="post-author">
+								<div class="media">
+									<div class="media-left">
+                  {% set imagestyle = {
+                    '#theme':      'image_style',
+                    '#style_name': 'thumbnail',
+                    '#uri':        node.uid.entity.user_picture.entity.uri.value,
+                    '#attributes': { class: 'media-object' },
+                  } %}
+                  {{ imagestyle }}
+									</div>
+									<div class="media-body">
+										<div class="media-heading">
+											<h3>{{ author_name }}</h3>
+										</div>
+										<p>{{ node.uid.entity.field_about_user.value }}</p>
+										<ul class="author-social">
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /author -->
+          {% endif %}
+           {{ content|without('body') }}
+						
+        </div>
+          
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
       </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes }}>
-    {{ content }}
+    </div>
   </div>
+</div>
 
-</article>
+

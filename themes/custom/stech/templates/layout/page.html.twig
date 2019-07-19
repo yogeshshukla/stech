@@ -121,17 +121,21 @@
         <!-- Aside Nav -->
     </div>
     <!-- /Nav -->
+    {% if node %}
     <!-- Page Header -->
     <div id="post-header" class="page-header">
-        <div class="background-img" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}');"></div>
+        {% if node.field_image.entity.fileuri %}
+          {% set image_style = "background-image: url(" ~ file_url(node.field_image.entity.fileuri) ~ ")" %}
+        {% else %}
+          {% set image_style = "background-color: #d4d1d1" %}
+        {% endif %}
+        <div class="background-img" style="{{ image_style }}"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-10">
                     <div class="post-meta">
-                        {% if node.field_category[0].value %}
-                            {% for key, item in node.field_category if key|first != '#' %}
-                                <a class="post-category cat-{{ loop.index }}" href="{{ item['#url'] }}">{{ dump(node.field_category.value) }}</a>
-                            {% endfor %}
+                        {% if node.field_category.entity.name.value %}
+                                <a class="post-category cat-1" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_category.entity.tid.value}) }}">{{ node.field_category.entity.name.value }}</a>
                         {% endif %}
                         <span class="post-date">{{ node.created_at|date("M d, Y") }}</span>
                     </div>
@@ -141,6 +145,28 @@
         </div>
     </div>
     <!-- /Page Header -->
+    {% else %}
+        {% if not is_front %}
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <ul class="page-header-breadcrumb">
+                            <li><a href="{{ base_path }}">Home</a></li>
+                            {% if term_title %}
+                              <li>{{ term_title }}</li>
+                            {% endif %}
+                        </ul>
+                        {% if term_title %}
+                            <h1>{{ term_title }}</h1>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endif %}
 </header>
 
 <!-- /Header -->
@@ -182,7 +208,7 @@
             <div class="col-md-4">
                 <div class="aside-widget text-center">
                     <a href="#" style="display: inline-block;margin: auto;">
-                        <img class="img-responsive" src="{{ base_path ~ directory }}/images/ad-1.jpg" alt="">
+                        <img class="img-responsive" src="{{ theme_path }}/images/ad-1.jpg" alt="">
                     </a>
                 </div>
                 {{ page.right_sidebar }}
