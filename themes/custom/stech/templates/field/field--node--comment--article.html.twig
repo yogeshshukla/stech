@@ -26,18 +26,20 @@
  * @see comment_preprocess_field()
  */
 #}
-<section{{ attributes }}>
+<div {{ attributes.addClass('section-row') }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes }}>{{ (comments|length) - 3 }} {{ label }}</h2>
+    <div class="section-title">
+      <h2{{ title_attributes }}>{{ (comments|length) - 3 }} {{ label }}</h2>
+    </div>
     {{ title_suffix }}
   {% endif %}
 
-  {{ comments }}
+  {{  comments }}
 
   {% if comment_form %}
     <h2{{ content_attributes }}>{{ 'Add new comment'|t }}</h2>
     {{ comment_form }}
   {% endif %}
 
-</section>
+</div>
