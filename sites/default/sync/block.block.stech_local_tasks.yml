@@ -1,0 +1,22 @@
+uuid: 49c3c922-70f1-4325-a656-aeb659ababa7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stech
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: stech_local_tasks
+theme: stech
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

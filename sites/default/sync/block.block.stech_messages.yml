@@ -1,0 +1,22 @@
+uuid: 3ad48a0b-f881-42e5-8011-7b8f102daa51
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stech
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: stech_messages
+theme: stech
+region: header
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

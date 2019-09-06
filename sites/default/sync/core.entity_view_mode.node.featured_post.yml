@@ -1,0 +1,10 @@
+uuid: 089720df-6b6a-4cff-9660-de637d6446c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_post
+label: 'Featured Post'
+targetEntityType: node
+cache: true

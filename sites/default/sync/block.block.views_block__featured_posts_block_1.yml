@@ -1,0 +1,30 @@
+uuid: 767bab1e-cd24-4474-b376-c3d73e474b3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.featured_posts
+  module:
+    - system
+    - views
+  theme:
+    - stech
+id: views_block__featured_posts_block_1
+theme: stech
+region: featured_posts
+weight: 0
+provider: null
+plugin: 'views_block:featured_posts-block_1'
+settings:
+  id: 'views_block:featured_posts-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

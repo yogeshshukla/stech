@@ -1,0 +1,15 @@
+uuid: 1170020a-dc85-41c5-b35a-d2923a447e17
+langcode: en
+status: true
+dependencies: {  }
+name: front_300_180_
+label: 'Front (300×180)'
+effects:
+  db68e4c4-1340-4e7c-876d-57cfeba83480:
+    uuid: db68e4c4-1340-4e7c-876d-57cfeba83480
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 180
+      anchor: center-center

@@ -1,0 +1,22 @@
+
+# Product menu items definition
+entity.product.collection:
+  title: 'List Product '
+  route_name: entity.product.collection
+  description: 'List Product entities'
+  parent: main
+  menu_name: main
+
+# Product menu items definition
+entity.product.create_product:
+  title: 'Create Product'
+  route_name: entity.product.add_form
+  description: 'Create Product'
+  parent: main
+  menu_name: main
+
+product.admin.structure.settings:
+  title: 'Product settings'
+  description: 'Configure Product entities'
+  route_name: product.settings
+  parent: system.admin_structure

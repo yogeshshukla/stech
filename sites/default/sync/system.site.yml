@@ -1,0 +1,14 @@
+uuid: ac85986b-101e-4bb5-8767-3b75b41e9c58
+name: stech
+mail: yogesh@yopmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

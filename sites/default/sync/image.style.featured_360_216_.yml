@@ -1,0 +1,15 @@
+uuid: 487d6ac0-3273-469c-8c36-e5f9369e2045
+langcode: en
+status: true
+dependencies: {  }
+name: featured_360_216_
+label: 'Featured (360×216)'
+effects:
+  f44df160-b0e4-41ab-8e24-74dd136bdfd2:
+    uuid: f44df160-b0e4-41ab-8e24-74dd136bdfd2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 216
+      anchor: center-center

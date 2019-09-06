@@ -1,0 +1,22 @@
+uuid: 2dc62b36-d075-41f8-a3bd-11a3aa369400
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stech
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: stech_content
+theme: stech
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

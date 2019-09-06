@@ -1,0 +1,4 @@
+name: Product
+description: This is product module using custom entity
+type: module
+core: 8.x

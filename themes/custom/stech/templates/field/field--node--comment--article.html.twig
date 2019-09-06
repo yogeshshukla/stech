@@ -38,8 +38,12 @@
   {{  comments }}
 
   {% if comment_form %}
-    <h2{{ content_attributes }}>{{ 'Add new comment'|t }}</h2>
+  <div class="section-row">
+		<div class="section-title">
+      <h2{{ content_attributes }}>{{ 'Leave A Reply'|t }}</h2>
+    </div>
     {{ comment_form }}
+  </div>
   {% endif %}
 
 </div>

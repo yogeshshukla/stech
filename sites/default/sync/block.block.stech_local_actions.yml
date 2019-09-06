@@ -1,0 +1,20 @@
+uuid: b5fdfb63-b06e-4907-88a5-4e40a225704c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - stech
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: stech_local_actions
+theme: stech
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

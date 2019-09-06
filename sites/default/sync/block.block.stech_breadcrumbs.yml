@@ -1,0 +1,22 @@
+uuid: d26cf5e0-4abc-4d4a-b20f-e84e26f45de9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stech
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: stech_breadcrumbs
+theme: stech
+region: header
+weight: -9
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

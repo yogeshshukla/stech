@@ -1,0 +1,24 @@
+uuid: 5ba2943d-1b08-4772-941b-13b17d20606c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.categoies_with_count
+  module:
+    - views
+  theme:
+    - stech
+id: views_block__categoies_with_count_block_1
+theme: stech
+region: right_sidebar
+weight: 0
+provider: null
+plugin: 'views_block:categoies_with_count-block_1'
+settings:
+  id: 'views_block:categoies_with_count-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -64,26 +64,56 @@
  * @see template_preprocess_comment()
  */
 #}
-<div class="post-comments">
-  <article{{ attributes.addClass('js-comment') }}>
-   
-    <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-    <!-- comment -->
-    <div class="media">
-      <div class="media-left">
-         {{ user_picture }}
-      </div>
-      <div class="media-body">
-        <div class="media-heading">
-          <h4>{{ author }}</h4>
-          <span class="time">{{ created }}</span>
-            {{ content.links }}
+{% if not parent_comment %}
+  <div class="post-comments col-md-12">
+    <article{{ attributes.addClass('js-comment') }}>
+    
+      <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
+      <!-- comment -->
+      <div class="media">
+        <div class="media-left">
+          {{ user_picture }}
         </div>
-        <p>{{ content.comment_body }}</p>
-        
+        <div class="media-body">
+          <div class="media-heading">
+            <h4>{{ author }}</h4>
+            <span class="time">{{ created }}</span>
+              {{ content.links }}
+          </div>
+          <p>{{ content.comment_body }}</p>
+          
+        </div>
       </div>
+      <!-- /comment -->
+    </article>
+  </div>
+{% else %}
+  <div class="post-comments col-md-12">
+    <div class="col-md-4">
     </div>
-    <!-- /comment -->
-  </article>
-</div>
+    <div class="col-md-8">
+      <article{{ attributes.addClass('js-comment') }}>
+      
+        <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
+        <!-- comment -->
+        <div class="media">
+          <div class="media-left">
+            {{ user_picture }}
+          </div>
+          <div class="media-body">
+            <div class="media-heading">
+              <h4>{{ author }}</h4>
+              <span class="time">{{ created }}</span>
+                {{ content.links }}
+            </div>
+            <p>{{ content.comment_body }}</p>
+            
+          </div>
+        </div>
+        <!-- /comment -->
+      </article>
+      </div>
+    </div> 
+{% endif %}
+
 
